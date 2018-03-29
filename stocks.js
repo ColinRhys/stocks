@@ -46,7 +46,9 @@ Module.register("stocks", {
                 priceElement.innerHTML = lastPrice;
 
                 var changeElement = document.createElement("span");
-                if (changePercentage > 0)
+                if(changePercentage == 0)
+                    changeElement.className = "unchanged";
+                else if (changePercentage > 0)
                     changeElement.className = "up";
                 else 
                     changeElement.className = "down";
